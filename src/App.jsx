@@ -1,14 +1,14 @@
-import { useState } from "react"
+import { useGame } from "./Game/Logic"
 import Welcome from "./UI/Welcome"
-import Game from "./UI/Game"
+import GameScreen from "./UI/GameScreen"
 
 export default function App() {
-  const [screen, setScreen] = useState("welcome")
+  const { screen } = useGame()
   return (
     <div className="container">
       <h1>Whack a Mole</h1>
-      {screen === "welcome" ? (<Welcome setScreen={setScreen} />) : <></>}
-      {screen === "game" ? (<Game setScreen={setScreen} />) : <></>}
+      {screen === "welcome" ? (<Welcome />) : <></>}
+      {screen === "game" ? (<GameScreen />) : <></>}
     </div>
   )
 }
