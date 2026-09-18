@@ -3,7 +3,7 @@ import { useGame } from "../Game/Logic"
 export default function PlayArea() {
   const { setScore, randInt } = useGame()
   const holes = Array(9).fill(0)
-  holes[randInt(0, 8)] = 1;
+  holes[randInt(0, 9)] = 1;
   return (
     <main>
       {holes.map((hole, i) => {
