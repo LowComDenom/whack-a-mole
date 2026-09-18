@@ -7,6 +7,12 @@ export function GameProvider({ children }) {
   const [timer, setTimer] = useState(15)
   const [highScores, setHighScores] = useState([])
 
+  function randInt(min, max) {
+    const minCeiled = Math.ceil(min);
+    const maxFloored = Math.floor(max);
+    return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled);
+  }
+
   // if timer === 0 or restart is clicked
 
   function endGame() {
@@ -26,7 +32,7 @@ export function GameProvider({ children }) {
     setScreen("game")
   }
 
-  const value = { screen, setScreen, startGame, endGame, score, setScore, timer, highScores }
+  const value = { randInt, screen, setScreen, startGame, endGame, score, setScore, timer, highScores }
   return <Game.Provider value={value}>{children}</Game.Provider>
 }
 
