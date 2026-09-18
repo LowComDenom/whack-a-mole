@@ -7,8 +7,9 @@ export default function PlayArea() {
   return (
     <main>
       {holes.map((hole, i) => {
-        if (hole === 0) return <div key={i} className="hole" />
-        else return <div key={i} className="mole hole" onClick={() => setScore(prevScore => prevScore + 1)} />
+        return hole === 0
+        ? <div key={i} className="hole" />
+        : <div key={i} className="mole hole" onClick={() => setScore(prevScore => prevScore + 1)} />
       })}
     </main>
   )

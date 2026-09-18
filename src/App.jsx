@@ -7,8 +7,8 @@ export default function App() {
   return (
     <div className="container">
       <h1>Whack a Mole</h1>
-      {screen === "welcome" ? (<Welcome />) : <></>}
-      {screen === "game" ? (<GameScreen />) : <></>}
+      {screen === "welcome" ? <Welcome /> : <></>}
+      {screen === "game" ? <GameScreen /> : <></>}
     </div>
   )
 }

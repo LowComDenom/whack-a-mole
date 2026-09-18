@@ -9,11 +9,11 @@ export default function Welcome() {
       <button onClick={() => startGame()}>Begin</button>
       <h3>High Scores</h3>
       <ul>
-        {highScores.map((score, i) => {
-          return (
-            <li key={i}>{score}</li>
-          )
-        })}
+        {
+          highScores.length > 0
+          ? highScores.map((score, i) => { return <li key={i}>{score}</li> })
+          : <p>No scores yet.</p>
+        }
       </ul>
     </div>
   )
